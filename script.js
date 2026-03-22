@@ -1,7 +1,7 @@
 const navToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links a');
-const heroVideo = document.querySelector('.hero-video');
+const heroMedia = document.querySelector('.hero-image');
 
 if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => {
@@ -51,9 +51,9 @@ const observer = new IntersectionObserver(
 revealElements.forEach((el) => observer.observe(el));
 
 window.addEventListener('scroll', () => {
-  if (!heroVideo) return;
+  if (!heroMedia) return;
   const offset = window.scrollY * 0.12;
-  heroVideo.style.transform = `scale(1.06) translateY(${Math.min(offset, 36)}px)`;
+  heroMedia.style.transform = `scale(1.04) translateY(${Math.min(offset, 36)}px)`;
 });
 
 document.querySelectorAll('.ripple').forEach((button) => {
