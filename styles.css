@@ -23,21 +23,12 @@ body {
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at 85% 15%, rgba(199, 165, 92, 0.11), transparent 42%),
-    radial-gradient(circle at 12% 78%, rgba(199, 165, 92, 0.09), transparent 45%),
-    linear-gradient(160deg, rgba(6, 6, 6, 0.64) 0%, rgba(11, 11, 11, 0.6) 45%, rgba(17, 17, 17, 0.64) 100%),
-    url("background.png") center/cover no-repeat fixed;
+  background: #070707 url("background.png") center/cover no-repeat fixed;
   overflow-x: hidden;
 }
 
 .grain-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  display: none;
 }
 
 img {
@@ -62,7 +53,7 @@ img {
 }
 
 .navbar {
-  min-height: 76px;
+  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,7 +70,7 @@ img {
 
 .brand-logo {
   width: clamp(150px, 19vw, 255px);
-  height: clamp(40px, 5.3vw, 64px);
+  height: clamp(56px, 6.2vw, 84px);
   display: grid;
   place-items: center;
   border-radius: 10px;
@@ -294,9 +285,23 @@ h1 {
 
 .split-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
   gap: clamp(1.4rem, 4vw, 3rem);
-  align-items: center;
+  justify-items: center;
+}
+
+.about-copy {
+  max-width: 760px;
+  text-align: center;
+}
+
+.about-copy .feature-list {
+  justify-items: center;
+}
+
+.about-copy .feature-list li {
+  text-align: left;
+  width: min(100%, 520px);
 }
 
 .feature-list {
@@ -324,26 +329,12 @@ h1 {
   top: 0.6rem;
 }
 
-.media-stack {
-  display: grid;
-  gap: 1rem;
-}
-
-.media-stack img,
 .membership-wrap img {
   width: 100%;
   border-radius: var(--radius);
   object-fit: cover;
   border: 1px solid var(--line);
   box-shadow: var(--glow);
-}
-
-.media-stack img:first-child {
-  aspect-ratio: 4 / 4.4;
-}
-
-.media-stack img:last-child {
-  aspect-ratio: 4 / 2.6;
 }
 
 .services .service-grid {
@@ -358,8 +349,16 @@ h1 {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.9rem;
+}
+
+.section-head-center {
+  text-align: center;
+}
+
+.section-head-center h2 {
+  margin-inline: auto;
 }
 
 .gallery-item {
@@ -382,20 +381,6 @@ h1 {
 
 .gallery-item:hover img {
   transform: scale(1.04);
-}
-
-.gallery-item:nth-child(1),
-.gallery-item:nth-child(4),
-.gallery-item:nth-child(7) {
-  grid-column: span 6;
-}
-
-.gallery-item:nth-child(2),
-.gallery-item:nth-child(3),
-.gallery-item:nth-child(5),
-.gallery-item:nth-child(6),
-.gallery-item:nth-child(8) {
-  grid-column: span 3;
 }
 
 .service-card {
@@ -628,10 +613,6 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .gallery-item:nth-child(n) {
-    grid-column: auto;
-  }
-
   .membership-wrap img {
     max-height: 370px;
   }
@@ -675,7 +656,7 @@ h1 {
     position: fixed;
     left: 4vw;
     right: 4vw;
-    top: 86px;
+    top: 106px;
     flex-direction: column;
     align-items: stretch;
     gap: 0.4rem;
@@ -722,7 +703,7 @@ h1 {
   }
 
   .navbar {
-    min-height: 70px;
+    min-height: 84px;
   }
 
   .section {
