@@ -217,6 +217,7 @@ img {
 
 .hero-content {
   padding-block: clamp(6rem, 9vw, 9rem);
+  text-align: center;
 }
 
 .kicker {
@@ -241,6 +242,7 @@ h1 {
   line-height: 1.03;
   text-wrap: balance;
   margin-bottom: 1.1rem;
+  margin-inline: auto;
 }
 
 .hero-tagline {
@@ -248,12 +250,14 @@ h1 {
   font-size: clamp(1.05rem, 2.3vw, 1.45rem);
   max-width: 36ch;
   margin-bottom: 2rem;
+  margin-inline: auto;
 }
 
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .section {
